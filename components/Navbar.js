@@ -31,7 +31,8 @@ export default function Navbar() {
     <nav className={`sticky top-0 z-50 border-b border-white/10 transition-colors duration-300 ${scrolled ? "bg-slate-950/90 backdrop-blur-md" : "bg-transparent"}`}>
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 lg:px-8">
         <Link href="/" className="flex items-center gap-2 text-xl font-black tracking-tight text-white">
-          <Image src="/logo.png" alt="Logo" width={80} height={80} priority className="h-16 w-auto object-contain" />
+          <Image src="/logo.png" alt="Novaflix" width={80} height={80} priority className="h-16 w-auto object-contain" />
+          <span className="hidden text-2xl font-black tracking-tight text-white sm:inline">Novaflix</span>
         </Link>
 
         <div className="hidden items-center gap-6 md:flex">
