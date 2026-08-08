@@ -1,0 +1,58 @@
+
+> anime-streaming-frontend@0.1.0 dev
+> next dev --hostname localhost
+
+   ▲ Next.js 15.4.0
+   - Local:        http://localhost:3000
+   - Network:      http://localhost:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.7s
+ ○ Compiling /api/news ...
+ ✓ Compiled /api/news in 1020ms (372 modules)
+ GET /api/news?limit=1 200 in 5281ms
+ ○ Compiling /api/img ...
+ ✓ Compiled /api/img in 1078ms (724 modules)
+ GET /api/img?url=https%3A%2F%2Fcdn.myanimelist.net%2Fimages%2Fanime%2F13%2F17405.jpg 200 in 1325ms
+ GET /api/news?limit=1 200 in 2952ms
+ ○ Compiling / ...
+ ✓ Compiled / in 2.5s (1130 modules)
+ GET / 200 in 5622ms
+ ○ Compiling /_error ...
+ ✓ Compiled /_error in 1303ms (1176 modules)
+ ○ Compiling /watch/[...slug] ...
+ ✓ Compiled /watch/[...slug] in 1099ms (1195 modules)
+ GET /watch/series/jujutsu-kaisen?title=Jujutsu+Kaisen&episode=2&poster=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw342%2FfHpKWq9ayzSk8nSwqRuaAUemRKh.jpg 200 in 2549ms
+ GET /watch/series/jujutsu-kaisen?title=Jujutsu+Kaisen&episode=2&poster=https%3A%2F%2Fimage.tmdb.org%2Ft%2Fp%2Fw342%2FfHpKWq9ayzSk8nSwqRuaAUemRKh.jpg 200 in 60ms
+ ○ Compiling /api/stream ...
+ ✓ Compiled /api/stream in 749ms (1211 modules)
+ GET /api/stream?title=Jujutsu%20Kaisen&episode=2&source=watchanimeworld&language=sub&season=1 200 in 4448ms
+ GET /api/stream?title=Jujutsu%20Kaisen&episode=2&source=watchanimeworld&language=sub&season=1 200 in 30ms
+ GET /api/stream?title=Jujutsu%20Kaisen&episode=2&source=watchanimeworld&language=sub&season=1 200 in 36ms
+ ✓ Compiled /api/news in 207ms (136 modules)
+ GET /api/news?limit=1 200 in 3841ms
+ GET /api/news?limit=1 200 in 3569ms
+ ○ Compiling /news/[slug] ...
+ ✓ Compiled /news/[slug] in 963ms (1169 modules)
+ GET /news/romelia-war-chronicle-animes-trailer-reveals-additional-cast-october-2026-premie 200 in 4564ms
+ ✓ Compiled /watchlist in 461ms (1189 modules)
+ GET /watchlist 200 in 682ms
+ ✓ Compiled /top in 364ms (1200 modules)
+ GET /top 200 in 537ms
+ ✓ Compiled /search in 376ms (1207 modules)
+ GET /search?q=one%20piece 200 in 563ms
+ ✓ Compiled /genre/[slug] in 444ms (1218 modules)
+ GET /genre/romance 200 in 1455ms
+ ✓ Compiled /watch/[...slug] in 350ms (580 modules)
+ GET /watch/anipub:778?title=Naruto&episode=1 200 in 692ms
+   ▲ Next.js 15.4.0
+   - Local:        http://localhost:3000
+   - Network:      http://localhost:3000
+   - Environments: .env
+
+ ✓ Starting...
+ ✓ Ready in 2.2s
+ ○ Compiling / ...
+ ✓ Compiled / in 1901ms (827 modules)
+ GET / 200 in 6481ms
