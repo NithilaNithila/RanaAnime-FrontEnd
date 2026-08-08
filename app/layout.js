@@ -2,7 +2,7 @@ import "./globals.css";
 import Navbar from "../components/Navbar";
 
 export const metadata = {
-  title: "Novaflix — Anime Streaming",
+  title: "RanaAnime — Anime Streaming",
   description: "Watch anime for free. Trending, seasonal, and popular anime with HD streaming.",
   icons: {
     icon: [
