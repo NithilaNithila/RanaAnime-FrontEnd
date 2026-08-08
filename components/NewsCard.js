@@ -12,7 +12,7 @@ const SOURCE_COLORS = {
   "Otaku USA": "bg-rose-500/15 text-rose-300",
   "Comic Book": "bg-amber-500/15 text-amber-300",
   "Anime Herald": "bg-emerald-500/15 text-emerald-300",
-  NovaFlix: "bg-cyan-500/15 text-cyan-300",
+  RanaAnime: "bg-cyan-500/15 text-cyan-300",
 };
 
 export default function NewsCard({ article }) {

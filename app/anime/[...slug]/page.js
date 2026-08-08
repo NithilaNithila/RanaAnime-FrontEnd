@@ -25,7 +25,7 @@ export default function AnimeDetailPage() {
       .then((data) => {
         if (data.success) {
           setAnime(data.data);
-          document.title = `${data.data.title} - NovaFlix`;
+          document.title = `${data.data.title} - RanaAnime`;
 
           const seasons = data.data.seasons;
           if (seasons && seasons.length > 0) {
