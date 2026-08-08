@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import PosterImage from "./PosterImage";
 
 export default function AnimeCard({ anime, href, badge, progress }) {
   const link = href || `/anime/${anime.slug || anime.id}`;
@@ -11,7 +12,7 @@ export default function AnimeCard({ anime, href, badge, progress }) {
     <Link href={link} className="group block overflow-hidden rounded-2xl border border-white/10 bg-slate-900 transition hover:-translate-y-1 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10">
       <div className="relative aspect-[3/4] overflow-hidden">
         {image ? (
-          <img src={image} alt={title} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+          <PosterImage src={image} alt={title} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
         ) : (
           <div className="flex h-full w-full items-center justify-center bg-slate-800 text-slate-500">No Image</div>
         )}

@@ -1,3 +1,14 @@
- ⚠ Port 3000 is in use, using available port 3001 instead.
-(node:6200) [DEP0060] DeprecationWarning: The `util._extend` API is deprecated. Please use Object.assign() instead.
-(Use `node --trace-deprecation ...` to show where the warning was created)
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\RanaAnime\frontend\.next\server\app\top\page.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\RanaAnime\\frontend\\.next\\server\\app\\top\\page.js',
+  page: '/top'
+}
+ ⨯ [Error: ENOENT: no such file or directory, open 'D:\RanaAnime\frontend\.next\server\app\top\page.js'] {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'D:\\RanaAnime\\frontend\\.next\\server\\app\\top\\page.js',
+  page: '/top'
+}

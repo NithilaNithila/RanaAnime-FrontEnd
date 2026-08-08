@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import AnimeCard from "../components/AnimeCard";
 import Link from "next/link";
-
 const toCard = (item) => {
   let slug = String(item.slug || "");
   if (item.source === "anipub" && !slug.startsWith("anipub:")) slug = `anipub:${slug}`;
@@ -21,15 +20,16 @@ const toCard = (item) => {
 };
 
 function HeroSection({ anime }) {
+  const [bannerError, setBannerError] = useState(false);
   if (!anime) return null;
   const title = anime.title?.english || anime.title?.romaji || "";
-  const banner = anime.bannerImage || anime.coverImage?.large || anime.image || "";
+  const banner = bannerError ? "" : anime.bannerImage || anime.coverImage?.large || anime.image || "";
 
   return (
     <section className="relative overflow-hidden border-b border-white/10">
       {banner && (
         <div className="absolute inset-0">
-          <img src={banner} alt="" role="presentation" className="h-full w-full object-cover" />
+          <img src={banner} alt="" role="presentation" onError={() => setBannerError(true)} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-slate-950/40" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-slate-950/50" />
         </div>

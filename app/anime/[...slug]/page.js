@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { ArrowLeft, ChevronDown, ChevronRight } from "lucide-react";
+import PosterImage from "../../../components/PosterImage";
 
 export default function AnimeDetailPage() {
   const params = useParams();
@@ -14,6 +15,7 @@ export default function AnimeDetailPage() {
   const [selectedSeasonIdx, setSelectedSeasonIdx] = useState(0);
   const [selectedLocalEp, setSelectedLocalEp] = useState(1);
   const [expandedSeasons, setExpandedSeasons] = useState({});
+  const [bannerError, setBannerError] = useState(false);
 
   useEffect(() => {
     if (!id) return;
@@ -68,7 +70,7 @@ export default function AnimeDetailPage() {
   const enriched = anime.enriched || {};
   const title = anime.title || "Unknown";
   const poster = anime.poster || "";
-  const bannerImage = enriched.bannerImage || "";
+  const bannerImage = bannerError ? "" : enriched.bannerImage || "";
   const seasons = anime.seasons || [];
   const episodes = anime.episodes || [];
   const totalEps =
@@ -88,7 +90,7 @@ export default function AnimeDetailPage() {
     <main>
       {bannerImage && (
         <div className="relative h-64 overflow-hidden lg:h-80">
-          <img src={bannerImage} alt="" role="presentation" className="h-full w-full object-cover" />
+          <img src={bannerImage} alt="" role="presentation" onError={() => setBannerError(true)} className="h-full w-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/50 to-transparent" />
         </div>
       )}
@@ -97,7 +99,7 @@ export default function AnimeDetailPage() {
         <div className={`flex gap-8 ${bannerImage ? "-mt-32 relative" : "pt-8"} flex-col lg:flex-row`}>
           <div className="w-48 flex-shrink-0 lg:w-56">
             {poster ? (
-              <img src={poster} alt={title} className="w-full rounded-2xl shadow-2xl" />
+              <PosterImage src={poster} alt={title} className="w-full rounded-2xl shadow-2xl" />
             ) : (
               <div className="flex aspect-[3/4] w-full items-center justify-center rounded-2xl bg-slate-800 text-5xl">🎬</div>
             )}

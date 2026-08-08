@@ -9,7 +9,7 @@ async function proxyToBackend(request) {
   const headers = new Headers();
   request.headers.forEach((value, key) => {
     const lower = key.toLowerCase();
-    if (["host", "connection", "content-length"].includes(lower)) return;
+    if (["host", "connection", "content-length", "origin"].includes(lower)) return;
     headers.set(key, value);
   });
 
@@ -28,9 +28,8 @@ async function proxyToBackend(request) {
 
   const responseHeaders = new Headers();
   response.headers.forEach((value, key) => {
-    if (key.toLowerCase() !== "content-length") {
-      responseHeaders.set(key, value);
-    }
+    if (["content-encoding", "content-length", "transfer-encoding"].includes(key.toLowerCase())) return;
+    responseHeaders.set(key, value);
   });
 
   return new NextResponse(body, {

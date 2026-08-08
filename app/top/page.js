@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { Flame } from "lucide-react";
 import AnimeCard from "../../components/AnimeCard";
+import PosterImage from "../../components/PosterImage";
 
 const toCard = (item) => {
   let slug = String(item.slug || "");
@@ -29,7 +30,7 @@ function RankCard({ anime, rank }) {
     <a href={watchHref} className="group relative flex items-center gap-4 overflow-hidden rounded-2xl border border-white/10 bg-slate-900 transition hover:-translate-y-0.5 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/10">
       <div className="relative w-24 flex-shrink-0 sm:w-32">
         {image ? (
-          <img src={image} alt={title} className="aspect-[3/4] w-full object-cover" loading="lazy" />
+          <PosterImage src={image} alt={title} className="aspect-[3/4] w-full object-cover" />
         ) : (
           <div className="aspect-[3/4] flex items-center justify-center bg-slate-800 text-slate-500">No Image</div>
         )}
