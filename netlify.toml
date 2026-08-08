@@ -1,0 +1,11 @@
+[build]
+  command = "next build"
+  publish = ".next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_PRIVATE_TARGET = "server"
+
+# Official Netlify Next.js runtime (required — the app uses server-side API proxy routes)
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
