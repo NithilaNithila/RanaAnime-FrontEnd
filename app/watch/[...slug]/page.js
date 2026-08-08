@@ -24,11 +24,20 @@ export default function WatchPage() {
   const [selectedSeason, setSelectedSeason] = useState(parseInt(searchParams.get("season") || "1"));
 
   const SOURCES = [
-    { id: "watchanimeworld", name: "WatchAnimeWorld" },
-    { id: "123anime", name: "123Anime" },
-    { id: "anipub", name: "Anipub" },
-    { id: "animoye", name: "AniMoye" },
+    { id: "watchanimeworld", name: "Server 1" },
+    { id: "123anime", name: "Server 2" },
+    { id: "anipub", name: "Server 3" },
+    { id: "animoye", name: "Server 4" },
   ];
+
+  const SOURCE_NAMES = {
+    watchanimeworld: "Server 1",
+    "123anime": "Server 2",
+    anipub: "Server 3",
+    animoye: "Server 4",
+  };
+
+  const sourceLabel = (id) => SOURCE_NAMES[id] || id;
 
   const HINDI_SOURCES = ["watchanimeworld", "animoye"];
   const LANGUAGE_SELECTOR_HIDDEN = HINDI_SOURCES.includes(selectedSource);
@@ -170,7 +179,7 @@ export default function WatchPage() {
           </div>
           {streamData && (
             <span className="rounded-full bg-emerald-500/15 px-3 py-1 text-xs font-semibold text-emerald-300">
-              {streamData.source}
+              {sourceLabel(streamData.source)}
             </span>
           )}
         </div>
@@ -191,7 +200,7 @@ export default function WatchPage() {
               {errorSources?.length > 0 && (
                 <div className="mt-4 space-y-1">
                   {errorSources.map((s, i) => (
-                    <p key={i} className="text-xs text-slate-500">{s.name}: {s.success ? "OK" : (s.reason || "Not available")}</p>
+                    <p key={i} className="text-xs text-slate-500">{sourceLabel(s.name)}: {s.success ? "OK" : (s.reason || "Not available")}</p>
                   ))}
                 </div>
               )}
@@ -279,7 +288,7 @@ export default function WatchPage() {
           <div className="mt-3 grid gap-2 sm:grid-cols-2">
             {streamData.attemptedSources.map((s, i) => (
               <div key={i} className="flex items-center justify-between rounded-xl border border-slate-700 bg-slate-950 px-3 py-2">
-                <span className="text-sm text-white">{s.name}</span>
+                <span className="text-sm text-white">{sourceLabel(s.name)}</span>
                 <span className={`text-xs font-semibold ${s.success ? "text-emerald-400" : "text-slate-500"}`}>
                   {s.success ? "Active" : "Failed"}
                 </span>
