@@ -6,10 +6,11 @@ export const metadata = {
   description: "Watch anime for free. Trending, seasonal, and popular anime with HD streaming.",
   icons: {
     icon: [
+      { url: "/logo.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
       { url: "/favicon-512.png?v=1", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png?v=1",
+    apple: "/logo.png",
   },
   manifest: "/site.webmanifest",
 };
@@ -18,15 +19,15 @@ const structuredData = {
   "@context": "https://schema.org",
   "@type": "WebSite",
   name: "RanaAnime",
-  url: "https://ranaanime.com",
-  logo: "https://ranaanime.com/logo.png",
+  url: "https://ranaanime.netlify.app",
+  logo: "https://ranaanime.netlify.app/logo.png",
   description: "Watch anime for free. Trending, seasonal, and popular anime with HD streaming.",
   publisher: {
     "@type": "Organization",
     name: "RanaAnime",
     logo: {
       "@type": "ImageObject",
-      url: "https://ranaanime.com/logo.png",
+      url: "https://ranaanime.netlify.app/logo.png",
     },
   },
 };
