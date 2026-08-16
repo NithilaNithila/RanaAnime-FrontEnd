@@ -11,11 +11,35 @@ export const metadata = {
     ],
     apple: "/apple-touch-icon.png?v=1",
   },
+  manifest: "/site.webmanifest",
+};
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "RanaAnime",
+  url: "https://ranaanime.com",
+  logo: "https://ranaanime.com/logo.png",
+  description: "Watch anime for free. Trending, seasonal, and popular anime with HD streaming.",
+  publisher: {
+    "@type": "Organization",
+    name: "RanaAnime",
+    logo: {
+      "@type": "ImageObject",
+      url: "https://ranaanime.com/logo.png",
+    },
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
+      </head>
       <body className="min-h-screen bg-slate-950 text-slate-100 antialiased">
         <Navbar />
         {children}
