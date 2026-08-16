@@ -6,30 +6,33 @@ export const metadata = {
   description: "Watch anime for free. Trending, seasonal, and popular anime with HD streaming.",
   icons: {
     icon: [
-      { url: "/logo.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-512.png?v=1", sizes: "512x512", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: "/logo.png",
+    apple: "/apple-touch-icon.png",
   },
   manifest: "/site.webmanifest",
+  openGraph: {
+    type: "website",
+    url: "https://ranaanime.netlify.app/",
+    title: "RanaAnime — Anime Streaming",
+    images: ["https://ranaanime.netlify.app/logo.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    url: "https://ranaanime.netlify.app/",
+    title: "RanaAnime — Anime Streaming",
+    images: ["https://ranaanime.netlify.app/logo.png"],
+  },
 };
 
 const structuredData = {
   "@context": "https://schema.org",
-  "@type": "WebSite",
+  "@type": "Organization",
   name: "RanaAnime",
-  url: "https://ranaanime.netlify.app",
+  url: "https://ranaanime.netlify.app/",
   logo: "https://ranaanime.netlify.app/logo.png",
-  description: "Watch anime for free. Trending, seasonal, and popular anime with HD streaming.",
-  publisher: {
-    "@type": "Organization",
-    name: "RanaAnime",
-    logo: {
-      "@type": "ImageObject",
-      url: "https://ranaanime.netlify.app/logo.png",
-    },
-  },
 };
 
 export default function RootLayout({ children }) {
