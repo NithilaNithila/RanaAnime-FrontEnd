@@ -6,11 +6,11 @@ export const metadata = {
   description: "Watch anime for free. Trending, seasonal, and popular anime with HD streaming.",
   icons: {
     icon: [
+      { url: "/favicon.png", sizes: "48x48", type: "image/png" },
       { url: "/favicon.ico", sizes: "any" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: "/apple-touch-icon.png",
+    apple: "/favicon.png",
   },
   manifest: "/site.webmanifest",
   openGraph: {
